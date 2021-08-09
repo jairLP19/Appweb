@@ -1,19 +1,20 @@
-from flask import Flask,render_template, request ,url_for,redirect
-from flaskext.mysql import MySQL
+import psycopg2
+from flask import Flask,render_template,request,redirect
+from flask_sqlalchemy import SQLAlchemy
 
 
 
 app = Flask(__name__,static_url_path='/static')
 
-mysql = MySQL()
+db = SQLAlchemy(app)
+conn = psycopg2.connect(
 
-app.config['MYSQL_DATABASE_HOST'] = 'ec2-34-232-191-133.compute-1.amazonaws.com'
-app.config['MYSQL_DATABASE_USER'] = 'czdfdojgmpjtll'
-app.config['MYSQL_DATABASE_PASSWORD'] = '3c86e4598bc481d607584a7a09d35e2bb8d3fc72edd7be93a44b2d567dd18537'
-app.config['MYSQL_DATABASE_DB'] = 'd8ig7998ra9rf5'
-app.config['MYSQL_DATABASE_PORT'] = 5432
+    host="ec2-34-232-191-133.compute-1.amazonaws.com",
+    database="czdfdojgmpjtll",
+    user="3c86e4598bc481d607584a7a09d35e2bb8d3fc72edd7be93a44b2d567dd18537",
+    password="d8ig7998ra9rf5"
+    )
 
-mysql.init_app(app)
 
 
 @app.route("/")
@@ -31,15 +32,15 @@ def index_html():
 @app.route("/formulario")
 def formulario_html():
 
-        conn = mysql.connect()
-        cursor = conn.cursor()
 
-        cursor.execute("SELECT * from pedido")
+        conenctar = conn.cursor()
 
-        datos = cursor.fetchall()
+        conenctar.execute("SELECT * from pedido")
+
+        datos = conenctar.fetchall()
 
         print(datos)
-        cursor.close()
+        conenctar.close()
 
         return render_template('formulario.html', ver_pedido=datos)
 
@@ -52,43 +53,43 @@ def guardar_pedido():
     archivo = request.form["file"]
     descripcion = request.form["descripcion"]
 
-    conn = mysql.connect()
 
-    cursor = conn.cursor()
 
-    cursor.execute("INSERT INTO Pedido(nombre, correo, Tipo, archivo, descripcion ) VALUES (%s,%s,%s,%s,%s)", (nombre, correo, tipo, archivo, descripcion, id))
+    connectar = conn.cursor()
+
+    connectar.execute("INSERT INTO Pedido(nombre, correo, Tipo, archivo, descripcion ) VALUES (%s,%s,%s,%s,%s)", (nombre, correo, tipo, archivo, descripcion, id))
 
     conn.commit()
-    cursor.close()
+    connectar.close()
 
     return redirect("/formulario")
 
 @app.route("/eliminar_pedido/<string:id>")
 def eliminar_pedido(id):
 
-    conn = mysql.connect()
 
-    cursor = conn.cursor()
 
-    cursor.execute("DELETE FROM pedido where id_pedido={0}".format(id))
+    connectar = conn.cursor()
+
+    connectar.execute("DELETE FROM pedido where id_pedido={0}".format(id))
 
     conn.commit()
-    cursor.close()
+    connectar.close()
 
     return redirect("/formulario")
 
 @app.route("/consultar_pedido/<id>")
 def consultar_pedido(id):
 
-    conn = mysql.connect()
 
-    cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM pedido where id_pedido = %s", (id))
-    dato=cursor.fetchone()
+    connectar = conn.cursor()
+
+    connectar.execute("SELECT * FROM pedido where id_pedido = %s", (id))
+    dato=connectar.fetchone()
     print(dato)
     conn.commit()
-    cursor.close()
+    connectar.close()
 
     return render_template("/editar_pedido.html", pedido=dato)
 
@@ -101,14 +102,14 @@ def editar_pedido(id):
     archivo = request.form["file"]
     descripcion = request.form["descripcion"]
 
-    conn = mysql.connect()
 
-    cursor = conn.cursor()
 
-    cursor.execute("UPDATE pedido SET nombre=%s, correo=%s, Tipo=%s, archivo=%s, descripcion=%s where id_pedido=%s", (nombre, correo, tipo, archivo, descripcion,id))
+    connectar = conn.cursor()
+
+    connectar.execute("UPDATE pedido SET nombre=%s, correo=%s, Tipo=%s, archivo=%s, descripcion=%s where id_pedido=%s", (nombre, correo, tipo, archivo, descripcion, id))
 
     conn.commit()
-    cursor.close()
+    connectar.close()
 
     return redirect("/formulario")
 
