@@ -57,7 +57,7 @@ def guardar_pedido():
 
     connectar = conn.cursor()
 
-    connectar.execute("INSERT INTO Pedido(nombre, correo, Tipo, archivo, descripcion ) VALUES (%s,%s,%s,%s,%s)", (nombre, correo, tipo, archivo, descripcion, id))
+    connectar.execute("INSERT INTO Pedido(nombre, correo, Tipo, archivo, descripcion ) VALUES (%s,%s,%s,%s,%s)", (nombre, correo, tipo, archivo, descripcion))
 
     conn.commit()
     connectar.close()
