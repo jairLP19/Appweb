@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c20fd87d-4f81-458c-9886-9fb0d8be0ce3" name="Default Changelist" comment="carpeta .idea extraida 08/08/2021">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c20fd87d-4f81-458c-9886-9fb0d8be0ce3" name="Default Changelist" comment="carpeta scr 08/08/2021" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628469301458</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="carpeta scr 08/08/2021">
+      <created>1628474010724</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1628474010724</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -118,6 +123,7 @@
     <MESSAGE value="modificacion 6/08/2021" />
     <MESSAGE value="modificacion para heroku 08/08/2021" />
     <MESSAGE value="carpeta .idea extraida 08/08/2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="carpeta .idea extraida 08/08/2021" />
+    <MESSAGE value="carpeta scr 08/08/2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="carpeta scr 08/08/2021" />
   </component>
 </project>
