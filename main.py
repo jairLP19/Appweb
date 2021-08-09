@@ -2,17 +2,17 @@ import psycopg2
 from flask import Flask,render_template,request,redirect
 from flask_sqlalchemy import SQLAlchemy
 
-
+from flaskext.mysql import MySQL
 
 app = Flask(__name__,static_url_path='/static')
 
-db = SQLAlchemy(app)
+db=SQLAlchemy(app)
 conn = psycopg2.connect(
 
     host="ec2-34-232-191-133.compute-1.amazonaws.com",
-    database="czdfdojgmpjtll",
-    user="3c86e4598bc481d607584a7a09d35e2bb8d3fc72edd7be93a44b2d567dd18537",
-    password="d8ig7998ra9rf5"
+    database="d8ig7998ra9rf5",
+    user="czdfdojgmpjtll",
+    password="3c86e4598bc481d607584a7a09d35e2bb8d3fc72edd7be93a44b2d567dd18537"
     )
 
 
@@ -66,8 +66,6 @@ def guardar_pedido():
 
 @app.route("/eliminar_pedido/<string:id>")
 def eliminar_pedido(id):
-
-
 
     connectar = conn.cursor()
 
