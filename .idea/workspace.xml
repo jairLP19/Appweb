@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c20fd87d-4f81-458c-9886-9fb0d8be0ce3" name="Default Changelist" comment="modeificacion para prueba 09/08/2021">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="c20fd87d-4f81-458c-9886-9fb0d8be0ce3" name="Default Changelist" comment="reinicio 09/08/2021" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628544717231</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="reinicio 09/08/2021">
+      <created>1628552696545</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1628552696546</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -180,6 +183,7 @@
     <MESSAGE value="configuracion para base de datos 08/08/2021" />
     <MESSAGE value="configuracion para base de datos con posterger09/08/2021" />
     <MESSAGE value="modeificacion para prueba 09/08/2021" />
-    <option name="LAST_COMMIT_MESSAGE" value="modeificacion para prueba 09/08/2021" />
+    <MESSAGE value="reinicio 09/08/2021" />
+    <option name="LAST_COMMIT_MESSAGE" value="reinicio 09/08/2021" />
   </component>
 </project>
