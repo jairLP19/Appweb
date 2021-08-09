@@ -7,11 +7,11 @@ app = Flask(__name__,static_url_path='/static')
 
 mysql = MySQL()
 
-app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-app.config['MYSQL_DATABASE_DB'] = 'Proyecto'
-app.config['MYSQL_DATABASE_PORT'] = 3306
+app.config['MYSQL_DATABASE_HOST'] = 'ec2-34-232-191-133.compute-1.amazonaws.com'
+app.config['MYSQL_DATABASE_USER'] = 'czdfdojgmpjtll'
+app.config['MYSQL_DATABASE_PASSWORD'] = '3c86e4598bc481d607584a7a09d35e2bb8d3fc72edd7be93a44b2d567dd18537'
+app.config['MYSQL_DATABASE_DB'] = 'd8ig7998ra9rf5'
+app.config['MYSQL_DATABASE_PORT'] = 5432
 
 mysql.init_app(app)
 
