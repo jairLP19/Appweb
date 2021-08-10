@@ -9,10 +9,10 @@ app = Flask(__name__,static_url_path='/static')
 db=SQLAlchemy(app)
 conn = psycopg2.connect(
 
-    host="ec2-34-232-191-133.compute-1.amazonaws.com",
-    database="d8ig7998ra9rf5",
-    user="czdfdojgmpjtll",
-    password="3c86e4598bc481d607584a7a09d35e2bb8d3fc72edd7be93a44b2d567dd18537"
+    host="ec2-34-228-100-83.compute-1.amazonaws.com",
+    database="dbckfg39jt28df",
+    user="bbzmanqtdvyluo",
+    password="6abb6f4c1c79d5af45e331cacc2ecd878ae95b0e783e9f16983b006bf029be26"
     )
 
 
