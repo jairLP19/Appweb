@@ -33,14 +33,14 @@ def index_html():
 def formulario_html():
 
 
-        conenctar = conn.cursor()
+        connectar = conn.cursor()
 
-        conenctar.execute("SELECT * from pedido")
+        connectar.execute("SELECT * from pedido")
 
-        datos = conenctar.fetchall()
+        datos = connectar.fetchall()
 
         print(datos)
-        conenctar.close()
+        connectar.close()
 
         return render_template('formulario.html', ver_pedido=datos)
 
